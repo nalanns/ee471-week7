@@ -1,0 +1,8 @@
+{
+  "batch_size": 128,
+  "lr": 0.08768044482382566,
+  "optimizer": "sgd",
+  "hidden": 128,
+  "dropout": 0.0808003370882933,
+  "epochs": 10
+}

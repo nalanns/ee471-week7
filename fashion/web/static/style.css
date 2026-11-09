@@ -1,0 +1,7 @@
+body { font-family: system-ui, sans-serif; background: #f5f5f5; margin: 0; }
+main { max-width: 480px; margin: 40px auto; padding: 24px; background: #fff; border-radius: 12px; display: flex; flex-direction: column; gap: 16px; }
+#preview { max-width: 100%; border-radius: 8px; }
+button { padding: 10px; font-size: 16px; cursor: pointer; }
+#results { font-size: 18px; }
+.compare { display: flex; gap: 1rem; }
+.compare section { flex: 1; }

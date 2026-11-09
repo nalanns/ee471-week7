@@ -1,0 +1,24 @@
+services:
+  baseline:
+    image: cifar10-baseline
+    container_name: cifar10-baseline
+    platform: linux/amd64
+    ports:
+      - "5061:5000"
+  optimized:
+    image: cifar10-optimized
+    container_name: cifar10-optimized
+    platform: linux/amd64
+    ports:
+      - "5062:5000"
+  web:
+    build: ./web
+    container_name: cifar10-web
+    ports:
+      - "8001:8000"
+    environment:
+      BASELINE_URL: http://baseline:5000
+      OPTIMIZED_URL: http://optimized:5000
+    depends_on:
+      - baseline
+      - optimized

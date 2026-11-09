@@ -1,0 +1,24 @@
+services:
+  baseline:
+    image: fashion-baseline
+    container_name: fashion-baseline
+    platform: linux/amd64
+    ports:
+      - "5051:5000"
+  optimized:
+    image: fashion-optimized
+    container_name: fashion-optimized
+    platform: linux/amd64
+    ports:
+      - "5052:5000"
+  web:
+    build: ./web
+    container_name: fashion-web
+    ports:
+      - "8000:8000"
+    environment:
+      BASELINE_URL: http://baseline:5000
+      OPTIMIZED_URL: http://optimized:5000
+    depends_on:
+      - baseline
+      - optimized

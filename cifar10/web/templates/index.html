@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CIFAR10 Classifier</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main>
+    <h1>CIFAR10 Classifier</h1>
+    <p>Upload a photo of a plane, car, bird, cat, deer, dog, frog, horse, ship or truck.</p>
+    <input type="file" id="image-input" accept="image/*">
+    <img id="preview" alt="Selected image" hidden>
+    <button id="classify-btn" disabled>Classify</button>
+    <p id="status"></p>
+    <div class="compare">
+      <section>
+        <h2>Baseline</h2>
+        <ul id="results-baseline"></ul>
+      </section>
+      <section>
+        <h2>Optimized</h2>
+        <ul id="results-optimized"></ul>
+      </section>
+    </div>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
